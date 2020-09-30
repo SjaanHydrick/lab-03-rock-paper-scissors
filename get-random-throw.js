@@ -18,6 +18,8 @@ export function randomThrow() {
 
     return itLandedOn;
 }
+
+
 // guess = user; value = comp
 export function doesUserWin(guess, itLandedOn) {
     if (guess === 'rock' && itLandedOn === 'lizard') {
@@ -39,6 +41,6 @@ export function doesUserWin(guess, itLandedOn) {
     } else if (guess === 'spock' && itLandedOn === 'scissors') {
         return true;
     } else if (guess === 'spock' && itLandedOn === 'rock') {
-        return true;
+        return true; 
     }
 }
