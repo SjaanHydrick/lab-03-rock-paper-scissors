@@ -1,4 +1,4 @@
-import { randomThrow, doesUserWin, whenUserLoses } from './get-random-throw.js';
+import { randomThrow, doesUserWin, whenUserLoses, whenUserDraws } from './get-random-throw.js';
 
 const button = document.querySelector('#shoot');
 const resultSpan = document.querySelector('#result');
@@ -25,15 +25,18 @@ button.addEventListener('click', () => {
     console.log(thrownValue);
 
     if (userGuess === thrownValue){
+        whenUserDraws(userGuess, thrownValue);
         draw++;
 
         drawCount.textContent = draw;
-        resultSpan.textContent = 'It\'s a draw! Try again!';
+        resultSpan.style.color = 'gold';
+        resultSpan.textContent = '';
 
     } else if (doesUserWin(userGuess, thrownValue)) {
         wins++;
 
         winCount.textContent = wins;
+        resultSpan.style.color = 'dodgerblue';
         resultSpan.textContent = 'You have emerged victorious!';
 
     } else if (!doesUserWin(userGuess, thrownValue)) {
@@ -41,6 +44,7 @@ button.addEventListener('click', () => {
         losses++;
 
         lossCount.textContent = losses;
+        resultSpan.style.color = 'red';
         resultSpan.textContent = 'You were beaten! Try again!';
     }
 });
