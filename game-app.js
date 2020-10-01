@@ -58,5 +58,4 @@ resetButton.addEventListener('click', () => {
     drawCount.textContent = draw;
 
     textDiv.style.visibility = 'hidden';
-
 });
