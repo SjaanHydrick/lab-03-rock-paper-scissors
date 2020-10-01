@@ -23,7 +23,7 @@ const explainSpan = document.querySelector('#explain');
 
 // guess = user; value = comp
 export function doesUserWin(guess, itLandedOn) {
-
+    explainSpan.style.color = 'dodgerblue';
     if (guess === 'rock' && itLandedOn === 'lizard') {
         explainSpan.textContent = 'Rock crushes Lizard!';
         return true;
@@ -53,12 +53,12 @@ export function doesUserWin(guess, itLandedOn) {
         return true;
     } else if (guess === 'spock' && itLandedOn === 'rock') {
         explainSpan.textContent = 'Spock vaporizes Rock!';
-        return true; 
+        return true;
     }
 }
 
 export function whenUserLoses(itLandedOn, guess) {
-
+    explainSpan.style.color = 'red';
     if (itLandedOn === 'scissors' && guess === 'rock') {
         explainSpan.textContent = 'Rock crushes Scissors!';
     } else if (itLandedOn === 'rock' && guess === 'scissors') {
@@ -79,5 +79,12 @@ export function whenUserLoses(itLandedOn, guess) {
         explainSpan.textContent = 'Spock smashes Scissors!';
     } else if (itLandedOn === 'spock' && guess === 'rock') {
         explainSpan.textContent = 'Spock vaporizes Rock!';
+    }
+}
+
+export function whenUserDraws(itLandedOn, guess) {
+    explainSpan.style.color = 'gold';
+    if (itLandedOn === guess) {
+        explainSpan.textContent = 'It\'s a draw! Try again!';
     }
 }
