@@ -7,42 +7,46 @@
     <link rel="stylesheet" href="game-main.css">
 </head>
 <body>
-    <section>
+    <section id="choices">
         <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-        <label>
-            <input 
-            type="radio"
-            name="options"
-            value="rock"
-            checked
-            />
-            <img src="./Rock.jpg">
-        </label>
-        <label>
-            <input type="radio"
-            name="options"
-            value="paper"
-            />
-            <img src="./Paper.jpg">
-        </label>
-        <label>
-            <input type="radio"
-            name="options"
-            value="scissors" />
-            <img src="./Scissors.jpg">
-        </label>
-        <label>
-            <input type="radio"
-            name="options"
-            value="lizard" />
-            <img src="./Lizard.png">
-        </label>
-        <label>
-            <input type="radio"
-            name="options"
-            value="spock" />
-            <img src="./Spock2.jpeg">
-        </label>
+        <section>
+                <label>
+                <input 
+                type="radio"
+                name="options"
+                value="rock"
+                checked
+                />
+                <img src="./Rock.jpg">
+            </label>
+            <label>
+                <input type="radio"
+                name="options"
+                value="paper"
+                />
+                <img src="./Paper.jpg">
+            </label>
+            <label>
+                <input type="radio"
+                name="options"
+                value="scissors" />
+                <img src="./Scissors.jpg">
+            </label>
+        </section>
+        <section>
+            <label>
+                <input type="radio"
+                name="options"
+                value="lizard" />
+                <img src="./Lizard.png">
+            </label>
+            <label>
+                <input type="radio"
+                name="options"
+                value="spock" />
+                <img src="./Spock2.jpeg">
+            </label>
+        </section>
     </section>
     <section>
         <button id="shoot">Shoot!</button>
@@ -50,17 +54,17 @@
             <p id="explain"></p>
             <p id="result"></p>
         </div>
-        <div>
+        <div class="counters">
             Wins: <span id="wins">0</span>
         </div>
-        <div>
+        <div class="counters">
             Losses: <span id="losses">0</span>
         </div>
-        <div>
+        <div class="counters">
             Draws: <span id="draw">0</span>
         </div>
         <button id="reset">Reset Counts</button>
-        <div>
+        <div class="counters">
             Resets: <span id="reset-count">0</span>
         </div>
 
