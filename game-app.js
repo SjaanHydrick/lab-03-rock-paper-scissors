@@ -1,13 +1,13 @@
-import { randomThrow, doesUserWin } from './get-random-throw.js';
+import { randomThrow, doesUserWin, whenUserLoses } from './get-random-throw.js';
 
 const button = document.querySelector('#shoot');
 const resultSpan = document.querySelector('#result');
-//const explainSpan = document.querySelector('#explain');
 const winCount = document.querySelector('#wins');
 const lossCount = document.querySelector('#losses');
-const drawCount = document.querySelector('#draws');
+const drawCount = document.querySelector('#draw');
 const resetButton = document.querySelector('#reset');
 const resetCount = document.querySelector('#reset-count');
+const textDiv = document.getElementById('text');
 
 let wins = 0;
 let losses = 0;
@@ -15,6 +15,7 @@ let draw = 0;
 let resets = 0;
 
 button.addEventListener('click', () => {
+    textDiv.style.visibility = 'visible';
     const thrownValue = randomThrow();
 
     const checkedValue = document.querySelector(':checked');
@@ -36,6 +37,7 @@ button.addEventListener('click', () => {
         resultSpan.textContent = 'You have emerged victorious!';
 
     } else if (!doesUserWin(userGuess, thrownValue)) {
+        whenUserLoses(thrownValue, userGuess);
         losses++;
 
         lossCount.textContent = losses;
@@ -54,4 +56,7 @@ resetButton.addEventListener('click', () => {
     winCount.textContent = wins;
     lossCount.textContent = losses;
     drawCount.textContent = draw;
+
+    textDiv.style.visibility = 'hidden';
+
 });
