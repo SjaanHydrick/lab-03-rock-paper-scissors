@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
+body {
+    background-image: url(./Vulcan\ Background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    background-color: lightsalmon;
+}
+
+h1 {
+    margin-top: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-style: italic;
+    font-size: 37pt;
+    color: gold;
+    text-shadow: 2px 2px black, 4px 4px 12px orange;
+}
+
+#choices {
+    display: grid;
+    grid-template-rows: 2;
+    margin-bottom: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + img {
+    border: solid 4px red;
+}
+
+img {
+    width: 200px;
+    box-shadow: 2px 2px 5px black;
+    margin: 5px;
+}
+
+p {
+    height: 30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22pt;
+    color: dodgerblue;
+    text-shadow: 2px 2px black, 4px 4px 12px orange;
+}
+
+#explain {
+    font-size: 25pt;
+    color: gold;
+    text-shadow: 2px 2px black, 4px 4px 12px orange;
+}
+
+.counters {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20pt;
+    color: white;
+    text-shadow: 2px 2px black, 4px 4px 12px orange;
+}
+
+button {
+    margin: 10px;
+    height: auto;
+    width: auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 33pt;
+    border-radius: 4px;
+    background-color: dodgerblue;
+    color: gold;
+    text-shadow: 2px 2px black;
+    box-shadow: 2px 2px 5px black;
+}
