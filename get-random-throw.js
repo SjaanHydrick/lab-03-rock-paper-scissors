@@ -23,7 +23,9 @@ const explainSpan = document.querySelector('#explain');
 
 // guess = user; value = comp
 export function doesUserWin(guess, itLandedOn) {
+
     explainSpan.style.color = 'dodgerblue';
+
     if (guess === 'rock' && itLandedOn === 'lizard') {
         explainSpan.textContent = 'Rock crushes Lizard!';
         return true;
