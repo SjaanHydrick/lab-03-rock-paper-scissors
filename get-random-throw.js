@@ -19,72 +19,57 @@ export function randomThrow() {
     return itLandedOn;
 }
 
-const explainSpan = document.querySelector('#explain');
+
 
 // guess = user; value = comp
 export function doesUserWin(guess, itLandedOn) {
-    explainSpan.style.color = 'dodgerblue';
+
     if (guess === 'rock' && itLandedOn === 'lizard') {
-        explainSpan.textContent = 'Rock crushes Lizard!';
-        return true;
+        return [true, 'Rock crushes Lizard!'];
     } else if (guess === 'rock' && itLandedOn === 'scissors') {
-        explainSpan.textContent = 'Rock crushes Scissors!';
-        return true;
+        return [true, 'Rock crushes Scissors!'];
     } else if (guess === 'paper' && itLandedOn === 'spock') {
-        explainSpan.textContent = 'Paper disproves Spock!';
-        return true;
+        return [true, 'Paper disproves Spock!'];
     } else if (guess === 'paper' && itLandedOn === 'rock') {
-        explainSpan.textContent = 'Paper covers Rock!';
-        return true;
+        return [true, 'Paper covers Rock!'];
     } else if (guess === 'scissors' && itLandedOn === 'paper') {
-        explainSpan.textContent = 'Scissors cuts Paper!';
-        return true;
+        return [true, 'Scissors cuts Paper!'];
     } else if (guess === 'scissors' && itLandedOn === 'lizard') {
-        explainSpan.textContent = 'Scissors decapitates Lizard!';
-        return true;
+        return [true, 'Scissors decapitates Lizard!'];
     } else if (guess === 'lizard' && itLandedOn === 'paper') {
-        explainSpan.textContent = 'Lizard eats Paper!';
-        return true;
+        return [true, 'Lizard eats Paper!'];
     } else if (guess === 'lizard' && itLandedOn === 'spock') {
-        explainSpan.textContent = 'Lizard poisons Spock!';
-        return true;
+        return [true, 'Lizard poisons Spock!'];
     } else if (guess === 'spock' && itLandedOn === 'scissors') {
-        explainSpan.textContent = 'Spock smashes Scissors!';
-        return true;
+        return [true, 'Spock smashes Scissors!'];
     } else if (guess === 'spock' && itLandedOn === 'rock') {
-        explainSpan.textContent = 'Spock vaporizes Rock!';
-        return true;
+        return [true, 'Spock vaporizes Rock!'];
     }
+
+    return [false];
 }
 
 export function whenUserLoses(itLandedOn, guess) {
-    explainSpan.style.color = 'red';
-    if (itLandedOn === 'scissors' && guess === 'rock') {
-        explainSpan.textContent = 'Rock crushes Scissors!';
-    } else if (itLandedOn === 'rock' && guess === 'scissors') {
-        explainSpan.textContent = 'Rock crushes Scissors!';
-    } else if (itLandedOn === 'paper' && guess === 'spock') {
-        explainSpan.textContent = 'Paper disproves Spock!';
-    } else if (itLandedOn === 'paper' && guess === 'rock') {
-        explainSpan.textContent = 'Paper covers Rock!';
-    } else if (itLandedOn === 'scissors' && guess === 'paper') {
-        explainSpan.textContent = 'Scissors cuts Paper!';
-    } else if (itLandedOn === 'scissors' && guess === 'lizard') {
-        explainSpan.textContent = 'Scissors decapitates Lizard!';
-    } else if (itLandedOn === 'lizard' && guess === 'paper') {
-        explainSpan.textContent = 'Lizard eats Paper!';
-    } else if (itLandedOn === 'lizard' && guess === 'spock') {
-        explainSpan.textContent = 'Lizard poisons Spock!';
-    } else if (itLandedOn === 'spock' && guess === 'scissors') {
-        explainSpan.textContent = 'Spock smashes Scissors!';
-    } else if (itLandedOn === 'spock' && guess === 'rock') {
-        explainSpan.textContent = 'Spock vaporizes Rock!';
-    }
-}
 
-export function whenUserDraws(itLandedOn, guess) {
-    explainSpan.style.color = 'gold';
-    if (itLandedOn === guess) {
-        explainSpan.textContent = 'It\'s a draw! Try again!';
+    if (itLandedOn === 'rock' && guess === 'scissors') {
+        return 'Rock crushes Scissors!';
+    } else if (itLandedOn === 'rock' && guess === 'lizard') {
+        return 'Rock crushes Lizard!';
+    } else if (itLandedOn === 'paper' && guess === 'spock') {
+        return 'Paper disproves Spock!';
+    } else if (itLandedOn === 'paper' && guess === 'rock') {
+        return 'Paper covers Rock!';
+    } else if (itLandedOn === 'scissors' && guess === 'paper') {
+        return 'Scissors cuts Paper!';
+    } else if (itLandedOn === 'scissors' && guess === 'lizard') {
+        return 'Scissors decapitates Lizard!';
+    } else if (itLandedOn === 'lizard' && guess === 'paper') {
+        return 'Lizard eats Paper!';
+    } else if (itLandedOn === 'lizard' && guess === 'spock') {
+        return 'Lizard poisons Spock!';
+    } else if (itLandedOn === 'spock' && guess === 'scissors') {
+        return 'Spock smashes Scissors!';
+    } else if (itLandedOn === 'spock' && guess === 'rock') {
+        return 'Spock vaporizes Rock!';
     }
 }

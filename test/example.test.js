@@ -21,14 +21,17 @@ test('randomThrow will return a string when used', (expect) => {
 test('doesUserWin will work', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-
+    const guess = 'paper';
+    const computer = 'spock';
+    const expected = [true, 'Paper disproves Spock!'];
+    
     //Act 
     // Call the function you're testing and set the result to a const
 
-    const actual = doesUserWin('paper', 'spock');
-    const expected = true;
+    const actual = doesUserWin(guess, computer);
+
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.deepEqual(actual, expected);
 });
