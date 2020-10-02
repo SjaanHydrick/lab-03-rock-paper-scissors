@@ -23,7 +23,7 @@ test('doesUserWin will work', (expect) => {
     // Set up your arguments and expectations
     const guess = 'paper';
     const computer = 'spock';
-    const expected = true;
+    const expected = [true, 'Paper disproves Spock!'];
     
     //Act 
     // Call the function you're testing and set the result to a const
@@ -33,5 +33,5 @@ test('doesUserWin will work', (expect) => {
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.deepEqual(actual, expected);
 });
