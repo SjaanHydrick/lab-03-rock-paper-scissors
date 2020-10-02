@@ -31,7 +31,7 @@ export function doesUserWin(guess, itLandedOn) {
     } else if (guess === 'paper' && itLandedOn === 'spock') {
         return [true, 'Paper disproves Spock!'];
     } else if (guess === 'paper' && itLandedOn === 'rock') {
-        return [true, 'Paper cover Rock!'];
+        return [true, 'Paper covers Rock!'];
     } else if (guess === 'scissors' && itLandedOn === 'paper') {
         return [true, 'Scissors cuts Paper!'];
     } else if (guess === 'scissors' && itLandedOn === 'lizard') {
@@ -51,10 +51,10 @@ export function doesUserWin(guess, itLandedOn) {
 
 export function whenUserLoses(itLandedOn, guess) {
 
-    if (itLandedOn === 'scissors' && guess === 'rock') {
+    if (itLandedOn === 'rock' && guess === 'scissors') {
         return 'Rock crushes Scissors!';
-    } else if (itLandedOn === 'rock' && guess === 'scissors') {
-        return 'Rock crushes Scissors!';
+    } else if (itLandedOn === 'rock' && guess === 'lizard') {
+        return 'Rock crushes Lizard!';
     } else if (itLandedOn === 'paper' && guess === 'spock') {
         return 'Paper disproves Spock!';
     } else if (itLandedOn === 'paper' && guess === 'rock') {
