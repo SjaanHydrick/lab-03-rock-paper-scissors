@@ -22,12 +22,7 @@ button.addEventListener('click', () => {
     const checkedValue = document.querySelector(':checked');
     const userGuess = checkedValue.value;
 
-    console.log(userGuess);
-    console.log(thrownValue);
-
     const result = doesUserWin(userGuess, thrownValue);
-
-    console.log(result);
 
     const userWon = result[0];
     const resultString = result[1];
